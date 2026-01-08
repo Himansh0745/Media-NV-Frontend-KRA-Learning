@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>11 - Capstone: Production Layout (Grid + Flex + Responsive)</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div class="wrap header__inner">
+        <a class="logo" href="#">CSS Mastery</a>
+        <nav class="nav" aria-label="Primary">
+          <a class="nav__link" href="#features">Features</a>
+          <a class="nav__link" href="#articles">Articles</a>
+          <a class="nav__link" href="#subscribe">Subscribe</a>
+        </nav>
+        <a class="btn btn--primary" href="#subscribe">Get updates</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="wrap hero__grid">
+          <div>
+            <p class="eyebrow">11 — Capstone</p>
+            <h1>Put it all together in a clean layout</h1>
+            <p class="lead">
+              A realistic landing page layout with responsive grid, cards, and an accessible form.
+            </p>
+            <div class="hero__actions">
+              <a class="btn btn--primary" href="#articles">Explore</a>
+              <a class="btn" href="#features">Learn more</a>
+            </div>
+          </div>
+          <div class="hero-art" aria-hidden="true"></div>
+        </div>
+      </section>
+
+      <section class="wrap section" id="features">
+        <header class="section__head">
+          <h2>Features</h2>
+          <p class="muted">Three practical layout patterns you’ll reuse everywhere.</p>
+        </header>
+
+        <div class="cards">
+          <article class="card">
+            <h3>Responsive grid</h3>
+            <p class="muted">Auto-fit cards with consistent spacing using <code>gap</code>.</p>
+          </article>
+          <article class="card">
+            <h3>Accessible focus</h3>
+            <p class="muted">Keyboard users get a clear <code>:focus-visible</code> ring.</p>
+          </article>
+          <article class="card">
+            <h3>Design tokens</h3>
+            <p class="muted">Theme colors and spacing via CSS variables.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="wrap section" id="articles">
+        <header class="section__head">
+          <h2>Latest articles</h2>
+          <p class="muted">A two-column layout with a sidebar that collapses on mobile.</p>
+        </header>
+        <div class="content">
+          <div class="content__main">
+            <article class="post">
+              <h3>Specificity without surprises</h3>
+              <p class="muted">
+                Use low-specificity selectors and structure your CSS so overrides are predictable.
+              </p>
+              <a class="text-link" href="#">Read article</a>
+            </article>
+
+            <article class="post">
+              <h3>Grid vs Flexbox</h3>
+              <p class="muted">
+                Grid for two-dimensional layout, Flexbox for one-dimensional alignment.
+              </p>
+              <a class="text-link" href="#">Read article</a>
+            </article>
+
+            <article class="post">
+              <h3>Motion with restraint</h3>
+              <p class="muted">
+                Prefer <code>transform</code> and <code>opacity</code>, and respect reduced motion.
+              </p>
+              <a class="text-link" href="#">Read article</a>
+            </article>
+          </div>
+
+          <aside class="sidebar" aria-label="Sidebar">
+            <div class="sidebar__box">
+              <h3>Quick tips</h3>
+              <ul class="list">
+                <li>Use <code>box-sizing: border-box</code></li>
+                <li>Prefer <code>gap</code> over margins for layout</li>
+                <li>Keep line-length around ~60–75 characters</li>
+              </ul>
+            </div>
+
+            <div class="sidebar__box" id="subscribe">
+              <h3>Subscribe</h3>
+              <p class="muted">Get a monthly CSS roundup. No spam.</p>
+              <form class="subscribe" action="#" method="get">
+                <label class="sr-only" for="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="you@example.com" required />
+                <button class="btn btn--primary" type="submit">Subscribe</button>
+              </form>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap footer__inner">
+        <p class="muted">Built with semantic HTML + modern CSS.</p>
+        <a class="text-link" href="#">Back to top</a>
+      </div>
+    </footer>
+  </body>
+</html>

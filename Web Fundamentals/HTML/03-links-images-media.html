@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>03 - Links, Images & Media</title>
+</head>
+
+<body>
+  <header>
+    <h1>Links, Images, and Media</h1>
+    <p>
+      Real projects (like a hospital portal) need navigation and media content.
+    </p>
+  </header>
+
+  <main>
+    <section>
+      <h2>Links (<code>&lt;a&gt;</code>)</h2>
+
+      <p>
+        <!-- href is the destination. target controls where it opens. rel improves security with target="_blank". -->
+        <a href="https://example.com" target="_blank" rel="noopener noreferrer">External link (opens new tab)</a>
+      </p>
+
+      <p>
+        <!-- Mail links use the mailto: scheme. -->
+        <a href="mailto:support@example.com">Email Support</a>
+      </p>
+
+      <p>
+        <!-- Phone links use the tel: scheme (useful on mobile). -->
+        <a href="tel:+916201456222">Call Hospital Front Desk</a>
+      </p>
+
+      <p>
+        <!-- You can link to a section on the same page using an id. -->
+        <a href="#media">Jump to Media Section</a>
+      </p>
+    </section>
+
+    <section>
+      <h2>Images (<code>&lt;img&gt;</code>)</h2>
+
+      <figure>
+        <!-- <figure> wraps self-contained content like an image with a caption. -->
+        <img src="images/hospital-front.jpg" alt="Front view of the hospital building" width="400" height="250">
+        <!-- <img> embeds an image. alt is REQUIRED for accessibility and SEO. -->
+        <!-- width/height reserve space and help layout stability. The file may not exist; this is still a valid example. -->
+        <figcaption>
+          <!-- <figcaption> provides a caption for the figure. -->
+          Hospital main entrance (example image path).
+        </figcaption>
+      </figure>
+
+      <p>
+        <!-- <picture> allows responsive images by selecting different sources. -->
+      </p>
+      <picture>
+        <!-- <source> defines a candidate image source with a media condition or type. -->
+        <source srcset="images/hospital-front.webp" type="image/webp">
+        <source srcset="images/hospital-front.jpg" type="image/jpeg">
+        <img src="images/hospital-front.jpg" alt="Hospital building (fallback image)" width="400" height="250">
+      </picture>
+
+      <p>
+        <!-- <map> and <area> create clickable regions inside an image (image map). -->
+      </p>
+      <img src="images/hospital-floorplan.png" alt="Hospital floor plan" usemap="#floorplan" width="400" height="250">
+      <map name="floorplan" id="floorplan">
+        <area shape="rect" coords="10,10,150,80" href="https://example.com/emergency" alt="Emergency ward">
+        <area shape="rect" coords="160,10,300,80" href="https://example.com/pharmacy" alt="Pharmacy">
+      </map>
+    </section>
+
+    <section id="media">
+      <h2>Audio and Video</h2>
+
+      <p>
+        <!-- <audio> embeds sound. controls shows the built-in player UI. -->
+      </p>
+      <audio controls>
+        <!-- <source> provides different audio formats; browser chooses what it supports. -->
+        <source src="media/announcement.mp3" type="audio/mpeg">
+        <source src="media/announcement.ogg" type="audio/ogg">
+        Your browser does not support the audio element.
+        <!-- Fallback text for older browsers. -->
+      </audio>
+
+      <p>
+        <!-- <video> embeds video. controls shows player UI. width/height define display size. -->
+      </p>
+      <video controls width="400" height="250">
+        <source src="media/intro.mp4" type="video/mp4">
+        <source src="media/intro.webm" type="video/webm">
+        <!-- <track> adds subtitles/captions for accessibility. -->
+        <track kind="captions" src="media/intro.en.vtt" srclang="en" label="English">
+        Your browser does not support the video element.
+      </video>
+    </section>
+
+    <section>
+      <h2>Download Links</h2>
+      <p>
+        <!-- download suggests downloading the resource instead of navigating to it. -->
+        <a href="documents/patient-guide.pdf" download>Download Patient Guide (example)</a>
+      </p>
+    </section>
+
+    <nav>
+      <a href="02-text-content.html">Back: Text Content</a><br>
+      <a href="04-lists-tables.html">Next: Lists & Tables</a>
+    </nav>
+  </main>
+
+  <footer>
+    <p><small>Lesson 03 - Links, Images & Media</small></p>
+  </footer>
+</body>
+
+</html>

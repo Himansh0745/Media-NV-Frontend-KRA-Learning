@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>01 - Foundations: Syntax, Color, Typography, Box Model</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="page">
+      <h1>01 — CSS Foundations</h1>
+      <p class="lead">
+        Colors, units, typography, and the box model in one page.
+      </p>
+    </header>
+
+    <main class="stack">
+      <section class="panel">
+        <h2>Typography + readable defaults</h2>
+        <p>
+          This paragraph uses <strong>global</strong> styles for font, line-height, and
+          text color.
+        </p>
+        <p class="muted">
+          This paragraph uses a <code>.muted</code> class to reduce emphasis.
+        </p>
+      </section>
+
+      <!-- SECTION 2: Colors + units -->
+      <section class="panel">
+        <h2>Colors + units</h2>
+        <div class="swatches">
+          <div class="swatch swatch--brand">
+            <p><strong>Brand</strong></p>
+            <p class="small">Uses a CSS variable.</p>
+          </div>
+          <div class="swatch swatch--accent">
+            <p><strong>Accent</strong></p>
+            <p class="small">Uses HSL for easy tweaking.</p>
+          </div>
+          <div class="swatch swatch--neutral">
+            <p><strong>Neutral</strong></p>
+            <p class="small">Good for backgrounds.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 3: Box model -->
+      <section class="panel">
+        <h2>Box model</h2>
+        <div class="box-row">
+          <div class="box">
+            <p class="small"><strong>Box A</strong></p>
+            <p class="small">Padding + border + margin.</p>
+          </div>
+          <div class="box box--tight">
+            <p class="small"><strong>Box B</strong></p>
+            <p class="small">Less padding.</p>
+          </div>
+          <div class="box box--shadow">
+            <p class="small"><strong>Box C</strong></p>
+            <p class="small">Shadow is not part of the box model.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 4: Width/height Min/max help prevent layouts that are too wide or too narrow. -->
+      <section class="panel">
+        <h2>Width + height basics</h2>
+        <div class="measure">
+          <p class="small">
+            This block uses <code>max-width</code> to maintain a comfortable reading
+            width.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="page footer">
+      <p class="small">
+        Next: Selectors + specificity (folder 02). Open the next folder’s
+        <code>index.html</code>.
+      </p>
+    </footer>
+  </body>
+</html>

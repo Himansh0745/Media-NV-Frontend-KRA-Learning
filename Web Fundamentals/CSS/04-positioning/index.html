@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>04 - Positioning, Overflow, Z-Index</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header class="topbar">
+      <div class="topbar__inner">
+        <strong>04 — Positioning &amp; Stacking</strong>
+        <a class="topbar__link" href="#tooltip">Jump to tooltip demo</a>
+      </div>
+    </header>
+
+    <main class="page stack">
+      <section class="panel">
+        <h1>Positioning overview</h1>
+        <p class="muted">
+          <code>position: relative</code> creates a positioning context for absolutely
+          positioned children.
+        </p>
+
+        <div class="relative-box">
+          <span class="badge" aria-label="New badge">NEW</span>
+          <p>
+            This box is <code>position: relative</code>.
+          </p>
+          <p class="muted">
+            The <code>NEW</code> badge is <code>position: absolute</code>.
+          </p>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2 id="tooltip">Absolute positioning: tooltip pattern</h2>
+        <p>
+          Hover or focus:
+          <a class="tip" href="#" aria-describedby="tiptext">
+            What is z-index?
+            <span class="tip__bubble" role="tooltip" id="tiptext">
+              <strong>z-index</strong> orders positioned elements within a stacking
+              context.
+            </span>
+          </a>
+        </p>
+      </section>
+
+      <section class="panel">
+        <h2>Sticky vs fixed</h2>
+        <p class="muted">
+          Sticky sticks <em>within its scroll container</em>. Fixed sticks to the
+          viewport.
+        </p>
+
+        <!-- The list creates a scroll container. Sticky header sticks inside it. -->
+        <div class="scroll-box" role="region" aria-label="Scrollable list">
+          <div class="sticky">I am sticky inside this scroll box</div>
+          <ul class="items">
+            <li>Item 01</li>
+            <li>Item 02</li>
+            <li>Item 03</li>
+            <li>Item 04</li>
+            <li>Item 05</li>
+            <li>Item 06</li>
+            <li>Item 07</li>
+            <li>Item 08</li>
+            <li>Item 09</li>
+            <li>Item 10</li>
+            <li>Item 11</li>
+            <li>Item 12</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Legacy float (know it, but prefer Flex/Grid)</h2>
+        <div class="float-card clearfix">
+          <div class="float-card__media" aria-hidden="true"></div>
+          <div class="float-card__body">
+            <h3>Float card</h3>
+            <p class="muted">
+              The media block floats left. The text wraps around it.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <a class="fixed-callout" href="#tooltip">Fixed help</a>
+
+    <footer class="page footer">
+      <p class="small">Next: responsive design + media queries (folder 05).</p>
+    </footer>
+  </body>
+</html>

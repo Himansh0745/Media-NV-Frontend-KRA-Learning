@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>09 - Images & Media: Object-fit, Aspect-ratio, Filters</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header class="page">
+      <h1>09 — Images &amp; Media</h1>
+      <p class="lead">
+        Practical patterns for responsive images, cropping, and effects.
+      </p>
+    </header>
+
+    <main class="page stack">
+      <section class="panel">
+        <h2>Responsive image: max-width + height auto</h2>
+        <figure class="figure">
+          <img
+            class="img"
+            alt="Demo image"
+            src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='700'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%233b82f6'/><stop offset='1' stop-color='%2310b981'/></linearGradient></defs><rect width='1200' height='700' fill='url(%23g)'/><circle cx='260' cy='250' r='160' fill='rgba(255,255,255,0.25)'/><text x='60' y='640' font-size='56' font-family='Arial' fill='white'>Responsive SVG</text></svg>"
+          />
+          <figcaption class="muted">
+            Responsive by default when you constrain width and keep height automatic.
+          </figcaption>
+        </figure>
+      </section>
+
+      <section class="panel">
+        <h2>object-fit: contain vs cover</h2>
+        <div class="grid">
+          <div>
+            <p class="label"><strong>contain</strong> (no cropping)</p>
+            <div class="frame">
+              <img class="fit fit--contain" alt="Contain demo" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='700'><rect width='1200' height='700' fill='%23111827'/><rect x='60' y='80' width='1080' height='540' fill='%233b82f6'/><text x='120' y='360' font-size='90' font-family='Arial' fill='white'>WIDE IMAGE</text></svg>" />
+            </div>
+          </div>
+          <div>
+            <p class="label"><strong>cover</strong> (cropping)</p>
+            <div class="frame">
+              <img class="fit fit--cover" alt="Cover demo" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='700'><rect width='1200' height='700' fill='%23111827'/><rect x='60' y='80' width='1080' height='540' fill='%2310b981'/><text x='120' y='360' font-size='90' font-family='Arial' fill='white'>WIDE IMAGE</text></svg>" />
+            </div>
+          </div>
+          <div>
+            <p class="label"><strong>cover + object-position</strong></p>
+            <div class="frame">
+              <img class="fit fit--pos" alt="Object position demo" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='700'><rect width='1200' height='700' fill='%23111827'/><circle cx='260' cy='350' r='220' fill='%23f59e0b'/><text x='520' y='380' font-size='80' font-family='Arial' fill='white'>FOCUS LEFT</text></svg>" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Background images: cover / contain</h2>
+        <div class="bg-grid">
+          <div class="bg bg--cover" aria-label="Background cover demo"></div>
+          <div class="bg bg--contain" aria-label="Background contain demo"></div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Filters + clipping</h2>
+        <div class="fx-grid">
+          <img
+            class="fx fx--filter"
+            alt="Filtered demo"
+            src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='700'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23ef4444'/><stop offset='1' stop-color='%2322c55e'/></linearGradient></defs><rect width='1200' height='700' fill='url(%23g)'/><text x='80' y='390' font-size='110' font-family='Arial' fill='white'>FILTER ME</text></svg>"
+          />
+          <img
+            class="fx fx--clip"
+            alt="Clipped demo"
+            src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='700'><rect width='1200' height='700' fill='%233b82f6'/><circle cx='800' cy='320' r='240' fill='rgba(255,255,255,0.25)'/><text x='80' y='390' font-size='110' font-family='Arial' fill='white'>CLIP-PATH</text></svg>"
+          />
+        </div>
+        <p class="muted">
+          In real apps, optimize images and prefer simpler effects for better performance.
+        </p>
+      </section>
+    </main>
+
+    <footer class="page footer">
+      <p class="small">Next: advanced CSS (variables, container queries, counters) in folder 10.</p>
+    </footer>
+  </body>
+</html>

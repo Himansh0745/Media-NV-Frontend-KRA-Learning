@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>05 - Semantic Elements</title>
+</head>
+<body>
+  <header>
+    <!-- <header> is the intro area for the page. -->
+    <h1>Semantic Layout (Hospital Portal Example)</h1>
+  </header>
+
+  <nav aria-label="Primary navigation">
+    <!-- <nav> groups primary navigation links. aria-label names the navigation for screen readers. -->
+    <a href="01-basic-structure.html">Start</a><br>
+    <a href="06-forms-inputs.html">Forms</a><br>
+    <a href="10-html5-advanced-tags.html">Advanced Tags</a>
+  </nav>
+
+  <main>
+    <!-- <main> is the unique main content. -->
+
+    <article>
+      <!-- <article> is a self-contained item (like a blog post, news card, or report). -->
+      <header>
+        <h2>Health Advisory</h2>
+        <p>
+          Posted on <time datetime="2026-01-07">Jan 7, 2026</time>
+        </p>
+      </header>
+
+      <section>
+        <!-- <section> groups content under a heading within the article. -->
+        <h3>Symptoms</h3>
+        <p>Fever, cough, and fatigue can be signs of infection.</p>
+      </section>
+
+      <section>
+        <h3>What to Do</h3>
+        <p>Book an appointment if symptoms persist.</p>
+      </section>
+
+      <footer>
+        <!-- <footer> inside an article can include author info, related links, etc. -->
+        <p>
+          Author:
+          <span>MediaNV Health Team</span>
+        </p>
+      </footer>
+    </article>
+
+    <aside>
+      <!-- <aside> is supporting/secondary content (like a sidebar). -->
+      <h2>Quick Links</h2>
+      <ul>
+        <li><a href="03-links-images-media.html">Patient Guide</a></li>
+        <li><a href="09-iframe-embed.html">Find Us (Map Embed)</a></li>
+      </ul>
+    </aside>
+
+    <section>
+      <h2>Other Helpful Semantic Tags</h2>
+
+      <p>
+        <!-- <figure> and <figcaption> for self-contained media and captions. -->
+      </p>
+      <figure>
+        <blockquote>
+          Good health and good sense are two of life’s greatest blessings.
+        </blockquote>
+        <figcaption>— A health quote example</figcaption>
+      </figure>
+
+      <p>
+        <!-- <address> provides contact info for the nearest article/page owner. -->
+      </p>
+      <address>
+        MediaNV Hospital, 123 Care Street
+      </address>
+    </section>
+  </main>
+
+  <footer>
+    <!-- Page-level footer. -->
+    <p><small>Lesson 05 - Semantic Elements</small></p>
+  </footer>
+</body>
+</html>

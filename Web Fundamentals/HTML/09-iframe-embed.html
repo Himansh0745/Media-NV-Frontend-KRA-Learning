@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>09 - iFrame, Embed & Object</title>
+</head>
+<body>
+  <!-- Embedding lets you show content from another page/service (maps, PDFs, videos). -->
+  <!-- Security note: only embed sources you trust. -->
+
+  <header>
+    <h1>Embedding Content</h1>
+    <p>
+      This page demonstrates <code>&lt;iframe&gt;</code>, <code>&lt;embed&gt;</code>, and <code>&lt;object&gt;</code>.
+    </p>
+  </header>
+
+  <main>
+    <section>
+      <h2>iFrame (Example: Hospital Location Map)</h2>
+      <!-- <iframe> embeds another HTML page inside this page. -->
+      <!-- title is important for accessibility. -->
+      <iframe
+        src="https://example.com"
+        title="Embedded example page (replace with a real map URL)"
+        width="400"
+        height="250"
+        loading="lazy"
+        referrerpolicy="no-referrer">
+        <!-- Fallback content for older browsers. -->
+        Your browser does not support iframes.
+      </iframe>
+      <!-- loading="lazy" hints that the browser can delay loading off-screen iframes. -->
+      <!-- referrerpolicy controls what referrer data is sent. -->
+    </section>
+
+    <section>
+      <h2>Embed (Example: PDF Patient Guide)</h2>
+      <!-- <embed> directly embeds a resource like a PDF. -->
+      <embed src="documents/patient-guide.pdf" type="application/pdf" width="400" height="250">
+      <!-- If the PDF file is missing, the browser will show an error; the tag usage is still correct. -->
+    </section>
+
+    <section>
+      <h2>Object + Param (Alternative Embed)</h2>
+      <!-- <object> can embed resources; it can contain fallback text. -->
+      <object data="documents/patient-guide.pdf" type="application/pdf" width="400" height="250">
+        <!-- <param> supplies parameters to plugins/objects (more common in older scenarios). -->
+        <param name="view" value="FitH">
+        Your browser cannot display this PDF. Please <a href="documents/patient-guide.pdf">download it</a>.
+      </object>
+    </section>
+
+    <section>
+      <h2>Security Tips (HTML-Only Notes)</h2>
+      <p>
+        When embedding:
+      </p>
+      <ul>
+        <li>Prefer trusted sources</li>
+        <li>Give iframes a descriptive <code>title</code></li>
+        <li>Consider restrictive policies when appropriate</li>
+      </ul>
+    </section>
+
+    <nav>
+      <a href="08-meta-seo.html">Back: Meta & SEO</a><br>
+      <a href="10-html5-advanced-tags.html">Next: HTML5 Advanced Tags</a>
+    </nav>
+  </main>
+
+  <footer>
+    <p><small>Lesson 09 - iFrame & Embed</small></p>
+  </footer>
+</body>
+</html>

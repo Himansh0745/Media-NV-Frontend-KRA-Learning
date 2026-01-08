@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>05 - Responsive Design: Media Queries, Fluid Type</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header class="page hero">
+      <p class="eyebrow">05 — Responsive Design</p>
+      <h1>Build layouts that adapt gracefully</h1>
+      <p class="lead">
+        Mobile-first CSS with fluid type, flexible grids, and respectful motion.
+      </p>
+    </header>
+
+    <main class="page stack">
+      <section class="panel">
+        <h2>Fluid typography + readable width</h2>
+
+        <div class="measure">
+          <p>
+            This block is constrained to a readable line-length and uses
+            <code>clamp()</code> for font sizing.
+          </p>
+          <p class="muted">
+            Try making your browser very narrow and very wide.
+          </p>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Responsive grid (auto-fit + minmax)</h2>
+
+        <div class="grid">
+          <article class="card">
+            <h3>Auto-fit</h3>
+            <p class="muted">Creates as many columns as will fit.</p>
+          </article>
+          <article class="card">
+            <h3>Minmax</h3>
+            <p class="muted">Protects a minimum size, grows when possible.</p>
+          </article>
+          <article class="card">
+            <h3>Gap</h3>
+            <p class="muted">Use gap instead of margins for layout spacing.</p>
+          </article>
+          <article class="card">
+            <h3>Mobile-first</h3>
+            <p class="muted">Start small, add enhancements at larger widths.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Breakpoint example</h2>
+
+        <div class="two-col">
+          <div class="box">
+            <h3>Column A</h3>
+            <p class="muted">Stacks on small screens, splits on larger screens.</p>
+          </div>
+          <div class="box">
+            <h3>Column B</h3>
+            <p class="muted">Use breakpoints for real layout changes.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Motion + accessibility</h2>
+        <div class="motion">
+          <div class="spinner" aria-hidden="true"></div>
+          <p class="muted">
+            Animations should be optional. Use media queries for user preferences.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="page footer">
+      <p class="small">Next: UI components + states (folder 06).</p>
+    </footer>
+  </body>
+</html>

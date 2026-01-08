@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>04 - Lists & Tables</title>
+</head>
+<body>
+  <header>
+    <h1>Lists and Tables</h1>
+    <p>
+      <!-- Lists organize items. Tables organize data in rows/columns (great for dashboards and reports). -->
+      This page uses a hospital dashboard example.
+    </p>
+
+
+
+    
+  </header>
+
+  <main>
+    <section>
+      <h2>Unordered List (<code>&lt;ul&gt;</code>)</h2>
+      <!-- <ul> is a bulleted list. Each item is an <li>. -->
+      <ul>
+        <li>Emergency</li>
+        <li>Outpatient Department</li>
+        <li>Pharmacy</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Ordered List (<code>&lt;ol&gt;</code>)</h2>
+      <!-- <ol> is a numbered list; useful for steps/instructions. -->
+      <ol>
+        <li>Register at reception</li>
+        <li>Consult the doctor</li>
+        <li>Collect medicines</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Description List (<code>&lt;dl&gt;</code>)</h2>
+      <!-- <dl> is a list of terms and descriptions. -->
+      <dl>
+        <dt>OPD</dt>
+        <!-- <dt> is the term (definition term). -->
+        <dd>Outpatient Department</dd>
+        <!-- <dd> is the description (definition details). -->
+
+        <dt>ICU</dt>
+        <dd>Intensive Care Unit</dd>
+      </dl>
+    </section>
+
+    <section>
+      <h2>Nested Lists</h2>
+      <!-- You can nest lists inside list items for subcategories. -->
+      <ul>
+        <li>
+          Departments
+          <ul>
+            <li>Cardiology</li>
+            <li>Neurology</li>
+          </ul>
+        </li>
+        <li>
+          Services
+          <ul>
+            <li>Lab Tests</li>
+            <li>Radiology</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Tables (Hospital Appointments)</h2>
+      <!-- <table> is for tabular data (NOT layout). -->
+      <table>
+        <!-- <caption> describes the table for accessibility and context. -->
+        <caption>Today’s Appointment Schedule</caption>
+
+        <!-- <colgroup> groups columns; <col> can target a specific column (often for styling, but still useful semantically). -->
+        <colgroup>
+          <col>
+          <col>
+          <col>
+        </colgroup>
+
+        <!-- <thead> contains header rows. -->
+        <thead>
+          <tr>
+            <!-- <tr> is a table row. -->
+            <th scope="col">Time</th>
+            <!-- <th> is a header cell; scope tells whether it's a row/column header. -->
+            <th scope="col">Patient</th>
+            <th scope="col">Department</th>
+          </tr>
+        </thead>
+
+        <!-- <tbody> contains the main data rows. -->
+        <tbody>
+          <tr>
+            <td>10:00</td>
+            <!-- <td> is a standard data cell. -->
+            <td>Rahul Sharma</td>
+            <td>Cardiology</td>
+          </tr>
+          <tr>
+            <td>11:30</td>
+            <td>Ayesha Khan</td>
+            <td>Neurology</td>
+          </tr>
+        </tbody>
+
+        <!-- <tfoot> contains summary/footer rows (totals, notes). -->
+        <tfoot>
+          <tr>
+            <th scope="row">Total</th>
+            <!-- scope="row" indicates this header labels the row. -->
+            <td colspan="2">2 appointments</td>
+            <!-- colspan merges columns. -->
+          </tr>
+        </tfoot>
+      </table>
+    </section>
+
+    <nav>
+      <a href="03-links-images-media.html">Back: Links & Media</a><br>
+      <a href="05-semantic-elements.html">Next: Semantic Elements</a>
+    </nav>
+  </main>
+
+  <footer>
+    <p><small>Lesson 04 - Lists & Tables</small></p>
+  </footer>
+</body>
+</html>

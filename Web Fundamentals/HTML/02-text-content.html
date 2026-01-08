@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>02 - Text Content</title>
+</head>
+<body>
+  <header>
+    <h1>Text Content Tags</h1>
+    <p>
+      This page shows common text tags you will use in articles, dashboards, and documentation.
+    </p>
+  </header>
+
+  <main>
+    <section>
+      <h2>Headings</h2>
+      <h3>Example: Hospital Dashboard Section</h3>
+      <h4>Appointments</h4>
+      <h5>Today</h5>
+      <h6>Notes</h6>
+    </section>
+
+    <section>
+      <h2>Paragraphs and Line-Level Meaning</h2>
+
+      <p>
+        <!-- <abbr> marks abbreviations; title provides the expanded form. -->
+        Patient ID: <abbr title="Unique Patient Identifier">UPI</abbr>
+      </p>
+
+      <p>
+        <b>Important:</b>
+        <!-- <strong> is strong importance. -->
+        <strong>Bring your reports</strong>.
+        <!-- <i> is an alternate voice/mood (like a term). -->
+        This is a medical term: <i>hypertension</i>.
+      </p>
+
+      <p>
+        <u>Review required</u>.
+        <!-- <s> marks text that is no longer accurate/relevant. -->
+        Old policy: <s>No walk-ins</s>.
+      </p>
+
+      <p>
+        Water is H<sub>2</sub>O and 2<sup>10</sup> is 1024.
+      </p>
+
+      <p>
+        <!-- <del> and <ins> represent edits (deleted/inserted content). -->
+        Clinic hours changed from <del>9 AM</del> to <ins>8 AM</ins>.
+      </p>
+
+      <p>
+        <!-- <q> is an inline quotation; browsers may add quotation marks. -->
+        Doctor said: <q>Drink more water.</q>
+      </p>
+
+      <blockquote cite="https://example.com/health-guidelines">
+        <!-- <blockquote> is a block quotation. cite can link to the source. -->
+        Prevention is better than cure.
+      </blockquote>
+
+      <p>
+        <!-- <cite> identifies the title of a work. -->
+        Source: <cite>Public Health Guidelines</cite>
+      </p>
+
+      <p>
+        <!-- <pre> preserves whitespace and line breaks exactly as typed. -->
+        <!-- <code> inside <pre> is common for showing code samples. -->
+      </p>
+      <pre><code>&lt;h1&gt;Hospital Portal&lt;/h1&gt;
+&lt;p&gt;Welcome back!&lt;/p&gt;</code></pre>
+
+      <p>
+        <!-- <address> is contact information for a person/organization. -->
+      </p>
+      <address>
+        MediaNV Hospital<br>
+        shreeya Amalga<br>
+        Contact: +91-00000-00000
+      </address>
+    </section>
+
+    <section>
+      <h2>Bidirectional Text and Wrapping Helpers</h2>
+      <p>
+        <!-- <bdi> isolates text that might have different direction (useful for usernames). -->
+        User: <bdi>محمد</bdi>
+      </p>
+
+      <p>
+        <!-- <bdo> overrides text direction. dir="rtl" means right-to-left. -->
+        <bdo dir="rtl">This text is forced RTL</bdo>
+      </p>
+
+      <p>
+        <!-- <wbr> is a possible line-break opportunity inside long words/strings. -->
+        Token: ABCDEFGHIJKL<wbr>MNOPQRSTUVWXYZ
+      </p>
+    </section>
+
+    <nav>
+      <a href="01-basic-structure.html">Back: Basic Structure</a><br>
+      <a href="03-links-images-media.html">Next: Links, Images & Media</a>
+    </nav>
+  </main>
+
+  <footer>
+    <p><small>Lesson 02 - Text Content</small></p>
+  </footer>
+</body>
+</html>

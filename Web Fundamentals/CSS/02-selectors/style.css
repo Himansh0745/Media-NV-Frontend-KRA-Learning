@@ -1,0 +1,130 @@
+/*02 - Selectors & Specificity - Attribute selectors, combinators, pseudo-classes, pseudo-elements - Inheritance and specificity */
+
+/* Basic reset */
+* { box-sizing: border-box; }
+body { 
+  margin: 0; 
+  font-family: Arial, Helvetica, sans-serif; 
+  background: #f3f3f3; 
+  color: #222; 
+  line-height: 1.5; 
+}
+.page { 
+  max-width: 900px; 
+  margin: 0 auto; 
+  padding: 20px; 
+}
+.panel { 
+  background: #fff; 
+  border: 1px solid #ccc; 
+  padding: 15px; 
+  margin-bottom: 15px; 
+}
+.lead { 
+  margin-top: 6px; 
+  color: #555; 
+}
+.small { 
+  font-size: 14px; 
+  color: #555; 
+}
+.link-row { 
+  margin: 10px 0; 
+}
+
+/* Attribute selectors */
+a[href^="https"] { color: #06c; }
+a[href^="#"] { color: #0a8a4a; }
+a[href^="mailto"] { color: #e67e00; }
+
+/* Pseudo-classes */
+.link { 
+  display: inline-block; 
+  margin: 3px; 
+  padding: 6px 10px; 
+  border: 1px solid #ccc; 
+  text-decoration: none; 
+  color: #222; 
+  background: #fff; 
+}
+.link:hover { background: #f0f0f0; }
+.btn { 
+  padding: 8px 12px; 
+  border: 1px solid #666; 
+  background: #eee; 
+  cursor: pointer; 
+}
+.btn:hover { background: #ddd; }
+.note { margin-top: 10px; color: #555; }
+
+/* Combinators */
+.tree-wrap { 
+  border: 1px dashed #aaa; 
+  padding: 10px; 
+}
+.tree { 
+  margin: 0; 
+  padding-left: 20px; 
+}
+.tree li a { 
+  color: #222; 
+  text-decoration: none; 
+}
+.tree li a:hover { 
+  text-decoration: underline; 
+}
+.mini-title { 
+  margin-top: 10px; 
+}
+.mini-title + p { 
+  border-left: 4px solid #06c; 
+  padding-left: 10px; 
+}
+.mini-title ~ p { 
+  color: #555; 
+}
+
+/* Pseudo-elements */
+.steps { 
+  margin: 10px 0 0; 
+  padding-left: 20px; 
+}
+.steps li { 
+  margin: 4px 0; 
+}
+.steps li::marker { 
+  color: #06c; 
+}
+.steps li[data-state="done"]::after { 
+  content: " (done)"; 
+  color: #0a8a4a; 
+}
+.steps li[data-state="doing"]::after { 
+  content: " (doing)"; 
+  color: #e67e00; 
+}
+.badge { 
+  margin-top: 10px; 
+  padding: 10px; 
+  border: 1px solid #ccc; 
+  background: #fafafa; 
+}
+.badge::before { 
+  content: "Note: "; 
+  font-weight: bold; 
+}
+
+/* Specificity demo */
+.card { 
+  border: 1px solid #ccc; 
+  padding: 10px; 
+  background: #fff; 
+}
+.card p { color: #444; }
+.card .card__text { color: #222; }
+#special { color: #06c; }
+.card__link { text-decoration: underline; }
+
+.footer {
+  padding-top: 0;
+}

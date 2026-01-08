@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>06 - UI Components: Buttons, Nav, Dropdown, Pagination</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header class="page">
+      <h1>06 — UI Components</h1>
+      <p class="lead">
+        Buttons, nav, dropdowns, and pagination with accessible focus styling.
+      </p>
+    </header>
+
+    <main class="page stack">
+      <section class="panel">
+        <h2>Navigation bar</h2>
+
+        <nav class="nav" aria-label="Primary navigation">
+          <a class="brand" href="#">CSS Mastery</a>
+          <div class="nav__links">
+            <a class="nav__link" href="#">Docs</a>
+            <a class="nav__link" href="#">Examples</a>
+            <a class="nav__link" href="#">About</a>
+          </div>
+          <button class="btn btn--primary" type="button">Sign in</button>
+        </nav>
+      </section>
+
+      <section class="panel">
+        <h2>Buttons + states</h2>
+
+        <div class="row" role="group" aria-label="Button styles">
+          <button class="btn btn--primary" type="button">Primary</button>
+          <button class="btn" type="button">Neutral</button>
+          <button class="btn btn--danger" type="button">Danger</button>
+          <button class="btn" type="button" disabled>Disabled</button>
+          <a class="btn btn--link" href="#">Link button</a>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Dropdown (no JS)</h2>
+
+        <details class="dropdown">
+          <summary class="dropdown__summary">Open menu</summary>
+          <div class="dropdown__menu" role="menu">
+            <a class="dropdown__item" href="#" role="menuitem">Profile</a>
+            <a class="dropdown__item" href="#" role="menuitem">Settings</a>
+            <a class="dropdown__item" href="#" role="menuitem">Sign out</a>
+          </div>
+        </details>
+      </section>
+
+      <section class="panel">
+        <h2>Pagination</h2>
+
+        <nav class="pagination" aria-label="Pagination">
+          <a class="page-btn" href="#" aria-label="Previous page">Prev</a>
+          <ul class="pages">
+            <li><a class="page-btn" href="#">1</a></li>
+            <li><a class="page-btn is-current" href="#" aria-current="page">2</a></li>
+            <li><a class="page-btn" href="#">3</a></li>
+            <li><span class="dots" aria-hidden="true">…</span></li>
+            <li><a class="page-btn" href="#">8</a></li>
+          </ul>
+          <a class="page-btn" href="#" aria-label="Next page">Next</a>
+        </nav>
+      </section>
+    </main>
+
+    <footer class="page footer">
+      <p class="small">Next: effects, transitions, and animations (folder 07).</p>
+    </footer>
+  </body>
+</html>

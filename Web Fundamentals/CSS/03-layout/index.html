@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>03 - Layout: Display, Flexbox, Grid, Alignment</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header class="page header">
+      <h1>03 — Layout (Flexbox + Grid)</h1>
+      <p class="lead">
+        Use Flexbox for 1D layout (row OR column). Use Grid for 2D layout (rows AND
+        columns).
+      </p>
+    </header>
+
+    <main class="page stack">
+      <section class="panel">
+        <h2>Display basics</h2>
+        <p>
+          <span class="pill pill--inline">inline</span>
+          <span class="pill pill--inline-block">inline-block</span>
+          <span class="pill pill--block">block</span>
+        </p>
+      </section>
+
+      <section class="panel">
+        <h2>Flexbox: responsive row with wrapping</h2>
+
+        <div class="toolbar" role="group" aria-label="Flex toolbar">
+          <button class="btn" type="button">Primary</button>
+          <button class="btn" type="button">Secondary</button>
+          <button class="btn" type="button">Tertiary action</button>
+          <a class="btn btn--link" href="#">Link action</a>
+        </div>
+
+        <div class="media">
+          <div class="avatar" aria-hidden="true"></div>
+          <div class="media__body">
+            <h3 class="media__title">Media object pattern</h3>
+            <p class="muted">
+              A fixed-size item (avatar) + flexible content. Great for comments,
+              notifications, and list rows.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Grid: auto-fit cards</h2>
+        <div class="card-grid">
+          <article class="card">
+            <h3>Card A</h3>
+            <p class="muted">A simple card layout with consistent spacing.</p>
+          </article>
+          <article class="card">
+            <h3>Card B</h3>
+            <p class="muted">Grid makes equal-height columns easy.</p>
+          </article>
+          <article class="card">
+            <h3>Card C</h3>
+            <p class="muted">Try resizing the viewport.</p>
+          </article>
+          <article class="card">
+            <h3>Card D</h3>
+            <p class="muted">Auto-fit packs as many columns as will fit.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Alignment + sizing tips</h2>
+        <div class="center-demo">
+          <div class="center-demo__box">
+            <p class="small"><strong>Centered</strong></p>
+            <p class="small">Using grid + place-items.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="page footer">
+      <p class="small">Next: positioning, overflow, and z-index (folder 04).</p>
+    </footer>
+  </body>
+</html>

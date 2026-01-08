@@ -1,0 +1,132 @@
+/*Images & Media, Responsive images, object-fit / object-position, aspect-ratio, background-size, filters + clip-path */
+
+/* Basic reset */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f3f3f3;
+  color: #222;
+  line-height: 1.5;
+}
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+.page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.panel {
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+.lead {
+  margin-top: 6px;
+  color: #555;
+}
+.muted {
+  color: #555;
+}
+.small {
+  font-size: 14px;
+  color: #555;
+}
+
+.figure {
+  margin: 10px 0 0;
+}
+
+/* Responsive image */
+.img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid #ccc;
+}
+
+/* object-fit demo */
+.grid {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+}
+.label {
+  color: #555;
+  margin: 6px 0;
+}
+.frame {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border: 1px solid #ccc;
+  overflow: hidden;
+  background: #fafafa;
+}
+.fit {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.fit--contain {
+  object-fit: contain;
+}
+.fit--cover {
+  object-fit: cover;
+}
+.fit--pos {
+  object-fit: cover;
+  object-position: 10% 50%;
+}
+
+/* background-size demo */
+.bg-grid {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 10px;
+}
+.bg {
+  aspect-ratio: 16 / 9;
+  border: 1px solid #ccc;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='450'><rect width='800' height='450' fill='%230066cc'/><circle cx='620' cy='160' r='120' fill='rgba(255,255,255,0.25)'/></svg>");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.bg--cover {
+  background-size: cover;
+}
+.bg--contain {
+  background-size: contain;
+}
+
+/* filter + clip-path demo */
+.fx-grid {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 10px;
+}
+.fx {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid #ccc;
+}
+.fx--filter {
+  filter: grayscale(0.5) contrast(1.1);
+}
+.fx--clip {
+  clip-path: polygon(0% 0%, 92% 0%, 100% 18%, 100% 100%, 0% 100%);
+}
+.footer {
+  padding-top: 0;
+}

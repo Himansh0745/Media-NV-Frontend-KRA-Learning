@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>02 - Selectors, Specificity, Inheritance</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="page">
+      <h1>02 — Selectors &amp; Specificity</h1>
+      <p class="lead">
+        Learn how to target elements precisely and predict which rule wins.
+      </p>
+    </header>
+
+    <main class="page stack">
+      <section class="panel">
+        <h2>Attribute selectors + pseudo-classes</h2>
+
+        <!-- Links demonstrate attribute selectors like [href^="https"], Button demonstrates :hover and :focus-visible. -->
+        <nav class="link-row" aria-label="Selector demo links">
+          <a href="https://example.com" class="link">External link (https)</a>
+          <a href="#internal" class="link">Internal link (#)</a>
+          <a href="mailto:test@example.com" class="link">Mail link (mailto)</a>
+        </nav>
+
+        <button class="btn" type="button">Hover / Focus me</button>
+
+        <p class="note" id="internal">
+          This paragraph has an <code>id</code> to demonstrate specificity.
+        </p>
+      </section>
+
+      <section class="panel">
+        <h2>Combinators + structure</h2>
+
+        <!-- The list is nested so we can demonstrate, Descendant selector: .tree li a, Child selector: .tree > li, Adjacent sibling selector: h3 + p, General sibling selector: h3 ~ p -->
+        <div class="tree-wrap">
+          <ul class="tree" aria-label="Combinator demo">
+            <li>
+              <a href="#">Parent item</a>
+              <ul>
+                <li><a href="#">Child item A</a></li>
+                <li><a href="#">Child item B</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Another parent</a></li>
+          </ul>
+        </div>
+
+        <h3 class="mini-title">Sibling combinators</h3>
+        <p>
+          This paragraph is adjacent to the <code>h3</code> and can be styled with
+          <code>h3 + p</code>.
+        </p>
+        <p>
+          This paragraph is a later sibling and can be styled with
+          <code>h3 ~ p</code>.
+        </p>
+      </section>
+
+      <section class="panel">
+        <h2>Pseudo-elements + markers</h2>
+
+        <!--
+          - ::marker styles list bullets
+          - ::before and ::after add decorative UI without extra HTML
+          - ::selection styles selected text (try selecting)
+        -->
+        <ol class="steps">
+          <li data-state="done">Select elements</li>
+          <li data-state="doing">Understand specificity</li>
+          <li data-state="todo">Compose selectors</li>
+        </ol>
+
+        <p class="badge" data-variant="warning">
+          Pseudo-elements can create badges, icons, or separators.
+        </p>
+      </section>
+
+      <!-- This card intentionally has multiple competing rules. Goal: see why the "special" text becomes the final color. Specificity reminder: - Inline styles (avoid) beat everything except !important. - ID selectors (#x) beat classes (.x) beat type selectors (p). - If specificity ties, the later rule (source order) wins. -->
+      <section class="panel">
+        <h2>Specificity showdown</h2>
+        <article class="card" id="card">
+          <h3 class="card__title">Card title</h3>
+          <p class="card__text">
+            Normal text with <a class="card__link" href="#">a link</a>.
+          </p>
+          <p class="card__text" id="special">
+            Special text (has an <code>id</code>).
+          </p>
+        </article>
+      </section>
+    </main>
+
+    <footer class="page footer">
+      <p class="small">
+        Next: layout systems (Flexbox + Grid) in folder <code>03</code>.
+      </p>
+    </footer>
+  </body>
+</html>

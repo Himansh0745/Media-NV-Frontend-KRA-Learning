@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>06 - Forms & Inputs</title>
+</head>
+<body>
+  <header>
+    <h1>Forms and Inputs (Hospital Appointment)</h1>
+    <p>
+      This example shows common form tags used in real apps.
+      <!-- Note: Without server code or JS, the form won't actually submit anywhere meaningful, but the HTML structure is correct. -->
+    </p>
+  </header>
+
+  <main>
+    <section>
+      <h2>Appointment Booking Form</h2>
+
+      <form action="/submit-appointment" method="post" enctype="application/x-www-form-urlencoded" autocomplete="on">
+        <!-- <form> groups controls to submit data. -->
+        <!-- action is the URL to submit to; method is usually GET or POST. -->
+        <!-- enctype is the encoding type (important for file uploads). -->
+        <!-- autocomplete hints whether the browser may auto-fill fields. -->
+
+        <fieldset>
+          <!-- <fieldset> groups related controls. -->
+          <legend>Patient Details</legend>
+          <!-- <legend> is the title of the fieldset (helps accessibility). -->
+
+          <p>
+            <label for="fullName">Full Name</label>
+            <!-- <label> connects text to a form control using for/id. -->
+            <input id="fullName" name="fullName" type="text" required minlength="3" placeholder="e.g., Ayesha Khan">
+            <!-- <input> is a single-line control. required enforces input. placeholder shows a hint. -->
+          </p>
+
+          <p>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required autocomplete="email" placeholder="name@example.com">
+            <!-- type="email" enables email validation and mobile keyboard improvements. -->
+          </p>
+
+          <p>
+            <label for="phone">Phone</label>
+            <input id="phone" name="phone" type="tel" required autocomplete="tel" placeholder="+91...">
+            <!-- type="tel" is for telephone numbers (validation is limited; use server-side validation too). -->
+          </p>
+
+          <p>
+            <label for="dob">Date of Birth</label>
+            <input id="dob" name="dob" type="date" required>
+            <!-- type="date" often shows a date picker in modern browsers. -->
+          </p>
+
+          <p>
+            <label for="patientId">Patient ID (if existing)</label>
+            <input id="patientId" name="patientId" type="text" inputmode="numeric" pattern="[0-9]{6}" placeholder="6 digits">
+            <!-- inputmode hints the keyboard type on mobile. pattern provides regex validation. -->
+          </p>
+        </fieldset>
+
+        <fieldset>
+          <legend>Appointment Preferences</legend>
+
+          <p>
+            <label for="department">Department</label>
+            <select id="department" name="department" required>
+              <!-- <select> creates a dropdown. -->
+              <option value="" selected>Select one</option>
+              <!-- <option> is a choice inside a select. -->
+              <option value="cardiology">Cardiology</option>
+              <option value="neurology">Neurology</option>
+              <option value="general">General Medicine</option>
+            </select>
+          </p>
+
+          <p>
+            <label for="doctor">Preferred Doctor (optional)</label>
+            <input id="doctor" name="doctor" list="doctors" placeholder="Start typing...">
+            <!-- list connects an input to a <datalist> for suggestions. -->
+            <datalist id="doctors">
+              <!-- <datalist> provides autocomplete suggestions for an input. -->
+              <option value="Dr. Mehta"></option>
+              <option value="Dr. Sharma"></option>
+              <option value="Dr. Khan"></option>
+            </datalist>
+          </p>
+
+          <p>
+            <label for="appointmentDate">Appointment Date</label>
+            <input id="appointmentDate" name="appointmentDate" type="date" required>
+          </p>
+
+          <p>
+            <label for="appointmentTime">Preferred Time</label>
+            <input id="appointmentTime" name="appointmentTime" type="time" required>
+            <!-- type="time" provides a time picker in many browsers. -->
+          </p>
+
+          <p>
+            <span>Visit Type</span>
+            <!-- Using <span> for grouping label text without creating a new block. -->
+            <br>
+            <input id="visitNew" name="visitType" type="radio" value="new" required>
+            <!-- type="radio" lets user select one option from a group. Same name groups them. -->
+            <label for="visitNew">New Patient</label>
+            <br>
+            <input id="visitFollow" name="visitType" type="radio" value="followup">
+            <label for="visitFollow">Follow-up</label>
+          </p>
+
+          <p>
+            <input id="consent" name="consent" type="checkbox" value="yes" required>
+            <!-- type="checkbox" allows true/false selection. -->
+            <label for="consent">I consent to share my details for appointment purposes.</label>
+          </p>
+
+          <p>
+            <label for="notes">Symptoms / Notes</label>
+            <textarea id="notes" name="notes" rows="4" cols="40" maxlength="500" placeholder="Describe symptoms..."></textarea>
+            <!-- <textarea> is a multi-line text input. rows/cols give default size. maxlength limits length. -->
+          </p>
+
+          <p>
+            <label for="urgency">Urgency Level</label>
+            <input id="urgency" name="urgency" type="range" min="1" max="5" value="3">
+            <!-- type="range" creates a slider. -->
+          </p>
+
+          <p>
+            <label for="report">Upload a report (optional)</label>
+            <input id="report" name="report" type="file" accept=".pdf,.jpg,.png">
+            <!-- type="file" lets user choose a file. accept filters file types. -->
+          </p>
+        </fieldset>
+
+        <fieldset>
+          <legend>Buttons</legend>
+
+          <p>
+            <button type="submit">Submit Appointment</button>
+            <!-- <button> is a clickable button; type="submit" submits the form. -->
+          </p>
+
+          <p>
+            <button type="reset">Reset Form</button>
+            <!-- type="reset" resets fields to initial values. -->
+          </p>
+
+          <p>
+            <input type="submit" value="Submit (Input Submit)">
+            <!-- <input type="submit"> is another way to create a submit button. -->
+          </p>
+        </fieldset>
+
+        <p>
+          <!-- <output> can display the result of a calculation (normally updated with JS, but tag is still important to know). -->
+          Estimated waiting score: <output name="waitScore">N/A (needs JS/server)</output>
+        </p>
+      </form>
+    </section>
+
+    <nav>
+      <a href="05-semantic-elements.html">Back: Semantic Elements</a><br>
+      <a href="07-accessibility-aria.html">Next: Accessibility & ARIA</a>
+    </nav>
+  </main>
+
+  <footer>
+    <p><small>Lesson 06 - Forms & Inputs</small></p>
+  </footer>
+</body>
+</html>

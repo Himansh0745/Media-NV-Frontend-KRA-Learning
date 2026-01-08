@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>07 - Accessibility & ARIA</title>
+</head>
+<body>
+  <!-- Accessibility (a11y) means everyone can use your site, including people using screen readers or keyboard-only navigation. -->
+  <!-- ARIA helps when native HTML semantics are not enough, but prefer semantic HTML first. -->
+
+    <!-- - ARIA attributes: aria-label / aria-labelledby add accessible names; role can add semantics when needed.
+    - tabindex: Controls keyboard focus order (use carefully). -->
+
+  <header>
+    <h1>Accessibility and ARIA (Hospital Portal)</h1>
+  </header>
+
+  <nav aria-label="Skip links">
+    <!-- Skip links help keyboard users jump directly to main content. -->
+    <a href="#main">Skip to main content</a>
+  </nav>
+
+  <main id="main">
+    <!-- id allows skip link targeting. -->
+
+    <section>
+      <h2>Images Need Meaningful alt</h2>
+      <img src="images/doctor.jpg" alt="Doctor consulting a patient" width="300" height="200">
+      <!-- If an image is purely decorative, use alt="" (empty) so screen readers can ignore it. -->
+      <img src="images/decorative-line.png" alt="" width="300" height="20">
+    </section>
+
+    <section>
+      <h2>Labels and Accessible Forms</h2>
+
+      <form action="/search" method="get">
+        <!-- Using <label> with for/id is the best practice for inputs. -->
+        <p>
+          <label for="search">Search doctors</label>
+          <input id="search" name="q" type="search" placeholder="e.g., cardiologist" required>
+          <!-- type="search" is like text, but optimized for search. -->
+        </p>
+
+        <p>
+          <button type="submit">Search</button>
+        </p>
+      </form>
+    </section>
+
+    <section>
+      <h2>ARIA Labels When There Is No Visible Text</h2>
+
+      <p>
+        <!-- aria-label provides an accessible name when the element has no visible label. -->
+        <button type="button" aria-label="Open notifications">Notifications</button>
+      </p>
+
+      <p>
+        <!-- aria-labelledby references an element that provides the label text. -->
+        <span id="billingTitle">Billing Support</span>
+        <button type="button" aria-labelledby="billingTitle">Contact</button>
+      </p>
+    </section>
+
+    <section>
+      <h2>Landmarks and Roles (Use Carefully)</h2>
+      <!-- Native semantic elements (header/nav/main/footer) already create landmarks. -->
+      <!-- role is useful when you must use non-semantic elements, but avoid doing that if possible. -->
+
+      <div role="region" aria-label="Important alerts">
+        <!-- role="region" creates a landmark region. aria-label names it. -->
+        <p>
+          <strong>Alert:</strong> OPD will be closed on public holiday.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Keyboard Navigation Concepts</h2>
+
+      <p>
+        <!-- tabindex="0" makes an element focusable in normal tab order. -->
+        <!-- Use tabindex carefully; prefer native focusable elements like links, buttons, inputs. -->
+        <span tabindex="0">Focusable help text (example)</span>
+      </p>
+
+      <p>
+        <!-- Access keys can conflict with browser/OS shortcuts; use sparingly. -->
+        <a href="06-forms-inputs.html" accesskey="f">Go to Forms (Alt+Shift+F may work)</a>
+      </p>
+    </section>
+
+    <section>
+      <h2>Accessible Tables: headers + scope</h2>
+
+      <table>
+        <caption>Lab Results (Example)</caption>
+        <thead>
+          <tr>
+            <th scope="col">Test</th>
+            <th scope="col">Result</th>
+            <th scope="col">Unit</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Hemoglobin</th>
+            <td>13.5</td>
+            <td>g/dL</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <nav aria-label="Lesson navigation">
+      <a href="06-forms-inputs.html">Back: Forms & Inputs</a><br>
+      <a href="08-meta-seo.html">Next: Meta & SEO</a>
+    </nav>
+  </main>
+
+  <footer>
+    <p><small>Lesson 07 - Accessibility & ARIA</small></p>
+  </footer>
+</body>
+</html>

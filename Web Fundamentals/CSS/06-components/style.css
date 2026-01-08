@@ -1,0 +1,156 @@
+/* UI Components - Buttons and states, Navbar layout, Dropdown via details/summary, Pagination */
+/* Basic reset */
+* { 
+  box-sizing: border-box; 
+}
+body { 
+  margin: 0; 
+  font-family: Arial, Helvetica, sans-serif; 
+  background: #f3f3f3; 
+  color: #222; 
+  line-height: 1.5; 
+}
+h1, h2, p { 
+  margin: 0; 
+}
+.page { 
+  max-width: 900px; 
+  margin: 0 auto; 
+  padding: 20px; 
+}
+.panel { 
+  background: #fff; 
+  border: 1px solid #ccc; 
+  padding: 15px; 
+  margin-bottom: 15px; 
+}
+.lead { 
+  margin-top: 6px; 
+  color: #555; 
+}
+.small { 
+  font-size: 14px; 
+  color: #555; 
+}
+
+/* Focus for keyboard */
+a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid #06c; outline-offset: 2px; }
+
+/* Navbar (Flexbox) */
+.nav { 
+  display: flex; 
+  align-items: center; 
+  gap: 10px; 
+  flex-wrap: wrap; 
+}
+.brand { 
+  font-weight: bold; 
+  text-decoration: none; 
+  color: #222; 
+}
+.nav__links { 
+  display: flex; 
+  gap: 10px; 
+  flex-wrap: wrap; 
+}
+.nav__link { 
+  color: #06c; 
+  text-decoration: none; 
+  padding: 4px 6px; 
+}
+.nav__link:hover { 
+  text-decoration: underline; 
+}
+
+/* Buttons */
+.btn { 
+  padding: 8px 12px; 
+  border: 1px solid #666; 
+  background: #eee; 
+  color: #222; 
+  cursor: pointer; 
+  text-decoration: none; 
+  display: inline-block; 
+}
+.btn:hover { 
+  background: #ddd; 
+}
+.btn:active { 
+  background: #ccc; 
+}
+.btn[disabled] { 
+  opacity: 0.6; 
+  cursor: not-allowed; 
+}
+.btn--primary { 
+  background: #06c; 
+  color: #fff; 
+  border-color: #06c; 
+}
+.btn--danger { 
+  background: #c00; 
+  color: #fff; 
+  border-color: #c00; 
+}
+.btn--link { 
+  background: #fff; 
+}
+.row { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 10px; }
+
+/* Dropdown (details/summary) */
+.dropdown { 
+  margin-top: 10px; 
+  width: 300px; 
+}
+.dropdown__summary { 
+  cursor: pointer; 
+  padding: 8px 12px; 
+  border: 1px solid #666; 
+  background: #eee; 
+}
+.dropdown__menu { 
+  border: 1px solid #ccc; 
+  background: #fff; 
+}
+.dropdown__item { 
+  display: block; 
+  padding: 8px 12px; 
+  text-decoration: none; 
+  color: #222; 
+}
+.dropdown__item:hover { 
+  background: #f0f0f0; 
+}
+
+/* Pagination */
+.pagination { 
+  margin-top: 10px; 
+  display: flex; 
+  align-items: center; 
+  gap: 10px; 
+  flex-wrap: wrap; 
+}
+.pages { 
+  list-style: none; 
+  margin: 0; 
+  padding: 0; 
+  display: flex; 
+  gap: 6px; 
+}
+.page-btn { 
+  border: 1px solid #666; 
+  background: #fff; 
+  padding: 6px 10px; 
+  text-decoration: none; 
+  color: #222; 
+}
+.page-btn.is-current { 
+  background: #e6f0ff; 
+  border-color: #06c; 
+}
+.dots { 
+  color: #555; 
+}
+.footer { 
+  padding-top: 0; 
+}

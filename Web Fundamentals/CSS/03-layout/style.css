@@ -1,0 +1,129 @@
+/*Layout (Display, Flexbox, Grid)*/
+
+/* Basic reset */
+* {box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+  background: #f3f3f3;
+  color: #222;
+}
+
+h1, h2, h3, p { margin: 0; }
+
+.page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.panel {
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.lead { 
+  margin-top: 6px; 
+  color: #555; 
+}
+.muted { 
+  color: #555; 
+}
+.small { 
+  font-size: 14px; 
+  color: #555; 
+}
+/* Display*/
+.pill {
+  border: 1px solid #ccc;
+  padding: 6px 10px;
+  background: #fff;
+}
+
+.pill--inline { 
+  display: inline; 
+}
+.pill--inline-block { 
+  display: inline-block; 
+  width: 160px; 
+}
+.pill--block { 
+  display: block; 
+  margin-top: 10px; 
+}
+
+/* Flexbox */
+.toolbar { 
+  display: flex; 
+  flex-wrap: wrap; 
+  gap: 10px; 
+  margin-top: 10px; 
+}
+.btn {
+  display: inline-block;
+  padding: 8px 12px;
+  border: 1px solid #666;
+  background: #eee;
+  color: #222;
+  text-decoration: none;
+  cursor: pointer;
+}
+.btn:hover { 
+  background: #ddd; 
+}
+.btn--link { 
+  background: #fff; 
+}
+/* Flexbox*/
+.media {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px dashed #aaa;
+}
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #06c;
+  flex: 0 0 auto;
+}
+.media__title { margin-bottom: 4px; }
+
+/* Grid demo */
+.card-grid {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 10px;
+}
+.card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  background: #fff;
+}
+
+/* Centering demo */
+.center-demo {
+  margin-top: 10px;
+  border: 1px dashed #aaa;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.center-demo__box {
+  width: 220px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  background: #fafafa;
+  text-align: center;
+}
+.footer {
+  padding-top: 0;
+}

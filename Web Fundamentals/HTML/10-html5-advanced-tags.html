@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>10 - HTML5 Advanced Tags</title>
+</head>
+
+<body>
+  <!-- This page introduces important HTML5 tags that are common in modern web apps. -->
+  <!-- We are using ONLY HTML, so some tags show their structure/fallback behavior without JavaScript. -->
+
+  <header>
+    <h1>HTML5 Advanced Tags</h1>
+    <p>
+      Learn <code>&lt;details&gt;</code>, <code>&lt;summary&gt;</code>, <code>&lt;dialog&gt;</code>,
+      <code>&lt;progress&gt;</code>, <code>&lt;meter&gt;</code>, and more.
+    </p>
+  </header>
+
+  <main>
+    <section>
+      <h2>Disclosure Widget: <code>&lt;details&gt;</code> and <code>&lt;summary&gt;</code></h2>
+      <!-- <details> creates an expandable panel. -->
+      <!-- <summary> is the visible label the user clicks. -->
+      <details open>
+        <summary>Hospital Visiting Hours</summary>
+        <p>General ward: 4 PM to 6 PM</p>
+        <p>ICU: Depends on permission</p>
+      </details>
+    </section>
+
+    <section>
+      <h2>Dialog (Modal-like UI)</h2>
+      <!-- <dialog> represents a dialog box. -->
+      <!-- open shows it by default (without JS). In real apps, JS typically toggles it. -->
+      <dialog open>
+        <h3>Quick Notice</h3>
+        <p>Online payments are under maintenance today.</p>
+        <form method="dialog">
+          <!-- method="dialog" allows the button to close the dialog (supported in modern browsers). -->
+          <button>Close</button>
+        </form>
+      </dialog>
+    </section>
+
+    <section>
+      <h2>Progress and Meter (Dashboards)</h2>
+
+      <p>
+        <!-- <progress> shows task completion. -->
+        Lab report generation: <progress value="60" max="100">60%</progress>
+      </p>
+
+      <p>
+        <!-- <meter> shows a measurement within a known range. -->
+        Bed occupancy: <meter min="0" max="100" low="40" high="80" optimum="30" value="75">75%</meter>
+      </p>
+    </section>
+
+    <section>
+      <h2>Text Helpers You Should Know</h2>
+
+      <p>
+        <!-- <data> connects human-readable text to machine-readable value. -->
+        Medication code: <data value="AMOX-500">Amoxicillin 500mg</data>
+      </p>
+
+      <p>
+        <!-- <dfn> marks the defining instance of a term. -->
+        <dfn>Telemedicine</dfn> means providing healthcare remotely using technology.
+      </p>
+
+      <p>
+        <!-- <ruby>, <rt>, <rp> provide pronunciation/annotation (useful for Japanese/Chinese text). -->
+        <ruby>
+          漢 <rt>kan</rt> 字 <rt>ji</rt>
+          <rp>(</rp>
+          <rt>kanji</rt>
+          <rp>)</rp>
+        </ruby>
+      </p>
+    </section>
+
+    <section>
+      <h2>Template Content (Not Rendered)</h2>
+      <!-- <template> holds HTML that is not rendered until used by JavaScript. -->
+      <template id="appointmentRow">
+        <tr>
+          <td>10:00</td>
+          <td>Example Patient</td>
+        </tr>
+      </template>
+      <p>
+        The <code>&lt;template&gt;</code> above will not display by itself.
+      </p>
+    </section>
+
+    <section>
+      <h2>Canvas and SVG (Graphics Containers)</h2>
+
+      <p>
+        <!-- <canvas> is a bitmap drawing surface (usually requires JS). -->
+        <canvas width="300" height="100">Canvas is not supported in your browser.</canvas>
+      </p>
+
+      <p>
+        <!-- <svg> is vector graphics; it can be inline. -->
+        <svg width="120" height="40" viewBox="0 0 120 40" aria-label="Simple heart icon" role="img">
+          <!-- <circle> is an SVG shape element (inside <svg>). -->
+          <circle cx="20" cy="20" r="10"></circle>
+          <circle cx="35" cy="20" r="10"></circle>
+          <path d="M15 22 Q27.5 38 40 22" fill="none"></path>
+        </svg>
+      </p>
+    </section>
+
+    <section>
+      <h2>Input Enhancements (HTML5)</h2>
+
+      <form action="/fake" method="post">
+        <p>
+          <label for="color">Choose a theme color</label>
+          <!-- type="color" opens a color picker in many browsers. -->
+          <input id="color" name="color" type="color" value="#000000">
+        </p>
+
+        <p>
+          <label for="week">Select a week</label>
+          <!-- type="week" selects week number (browser support varies). -->
+          <input id="week" name="week" type="week">
+        </p>
+
+        <p>
+          <label for="month">Select a month</label>
+          <!-- type="month" selects month/year (browser support varies). -->
+          <input id="month" name="month" type="month">
+        </p>
+
+        <p>
+          <button type="submit">Submit</button>
+        </p>
+      </form>
+    </section>
+
+    <nav>
+      <a href="09-iframe-embed.html">Back: iFrame & Embed</a><br>
+      <a href="01-basic-structure.html">Go to Start</a>
+    </nav>
+  </main>
+
+  <footer>
+    <p><small>Lesson 10 - HTML5 Advanced Tags</small></p>
+  </footer>
+</body>
+
+</html>

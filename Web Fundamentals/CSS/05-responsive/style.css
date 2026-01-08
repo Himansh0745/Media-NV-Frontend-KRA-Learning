@@ -1,0 +1,101 @@
+/* Responsive Design Mobile-first approach, Fluid type (clamp), Responsive grid (auto-fit/minmax),Preference queries (color scheme / reduced motion) */
+
+/* Basic reset */
+* { 
+  box-sizing: border-box; 
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f3f3f3;
+  color: #222;
+  line-height: 1.5;
+}
+
+h1, h2, h3, p { margin: 0; }
+
+.page { 
+  max-width: 900px; 
+  margin: 0 auto; 
+  padding: 20px; 
+}
+.panel { 
+  background: #fff; 
+  border: 1px solid #ccc; 
+  padding: 15px; 
+  margin-bottom: 15px; 
+}
+.hero { padding-top: 30px; }
+
+.eyebrow { 
+  font-weight: bold; 
+  color: #555; 
+}
+h1 { 
+  font-size: clamp(24px, 4vw, 42px); 
+  margin-top: 8px; 
+}
+.lead { margin-top: 10px; color: #555; }
+.muted { color: #555; }
+.small { font-size: 14px; color: #555; }
+
+.measure { 
+  max-width: 60ch; 
+  border-left: 4px solid #06c; 
+  padding-left: 10px; 
+  margin-top: 10px; 
+}
+
+/* Responsive grid (no media query needed) */
+.grid { 
+  margin-top: 10px; 
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); 
+  gap: 10px; 
+}
+.card { 
+  border: 1px solid #ccc; 
+  padding: 10px; 
+  background: #fff; 
+}
+
+/* Breakpoint example */
+.two-col { 
+  margin-top: 10px; 
+  display: grid; 
+  gap: 10px; 
+}
+.box { 
+  border: 1px solid #ccc; 
+  padding: 10px; 
+  background: #fafafa; 
+}
+@media (min-width: 800px) { .two-col { grid-template-columns: 1fr 1fr; } }
+
+/* Spinner */
+.motion { 
+  margin-top: 10px; 
+  display: flex; 
+  align-items: center; 
+  gap: 10px; 
+}
+.spinner { 
+  width: 32px; 
+  height: 32px; 
+  border: 3px solid #aac; 
+  border-top-color: #06c; 
+  border-radius: 50%; 
+  animation: spin 1s linear infinite; 
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) { 
+  .spinner { 
+    animation: none; 
+  } 
+}
+.footer {
+  padding-top: 0;
+}

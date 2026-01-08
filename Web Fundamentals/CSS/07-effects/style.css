@@ -1,0 +1,123 @@
+/* Effects & Motion, Gradients, shadows, transforms, transitions, keyframes, Reduced motion support */
+
+/* Basic reset */
+* { 
+  box-sizing: border-box; 
+}
+body { 
+  margin: 0; 
+  font-family: Arial, Helvetica, sans-serif; 
+  background: #f3f3f3; 
+  color: #222; 
+  line-height: 1.5; 
+}
+h1, h2, h3, p { 
+  margin: 0; 
+}
+
+.page { 
+  max-width: 900px; 
+  margin: 0 auto; 
+  padding: 20px; 
+}
+.panel { 
+  background: #fff; 
+  border: 1px solid #ccc; 
+  padding: 15px; 
+  margin-bottom: 15px; 
+}
+.lead { margin-top: 6px; color: #555; }
+.muted { color: #555; }
+.small { font-size: 14px; color: #555; }
+
+/* Gradient */
+.hero-card { 
+  margin-top: 10px; 
+  padding: 15px; 
+  border: 1px solid #ccc; 
+  background: linear-gradient(135deg, #e6f0ff, #ffffff); 
+}
+
+/* Shadows */
+.elevation-grid { 
+  margin-top: 10px; 
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); 
+  gap: 10px; 
+}
+.elevation { 
+  border: 1px solid #ccc; 
+  background: #fff; 
+  padding: 10px; 
+}
+.elevation--1 {
+  box-shadow: 2px 2px 6px #d0d0d0; 
+}
+.elevation--2 { 
+  box-shadow: 4px 4px 10px #c8c8c8; 
+}
+.elevation--3 { 
+  box-shadow: 6px 6px 14px #bdbdbd; 
+}
+
+/* Transforms + transitions */
+.card-row { 
+  margin-top: 10px; 
+  display: flex; 
+  flex-wrap: wrap; 
+  gap: 10px; 
+  align-items: center; 
+}
+.tilt-card {
+  flex: 1 1 220px;
+  border: 1px solid #ccc;
+  background: #fff;
+  padding: 12px;
+  text-decoration: none;
+  color: #222;
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+.tilt-card:hover { 
+  transform: translateY(-3px) rotate(-1deg); 
+  box-shadow: 6px 6px 12px #d0d0d0; 
+}
+
+.cta { 
+  border: 1px solid #06c; 
+  background: #06c; 
+  color: #fff; 
+  padding: 10px 12px; 
+  cursor: pointer; 
+  transition: transform 150ms ease; 
+}
+.cta:hover { 
+  transform: translateY(-2px); 
+}
+
+/* Keyframes */
+.orb-wrap { 
+  margin-top: 10px; 
+  display: flex; 
+  align-items: center; 
+  gap: 10px; 
+}
+.orb { 
+  width: 44px; 
+  height: 44px; 
+  border-radius: 50%; 
+  background: radial-gradient(circle, #fff 0 30%, #0a8a4a 32%); 
+  animation: floaty 1.5s ease-in-out infinite; 
+}
+@keyframes floaty { 
+  0%, 100% { transform: translateY(0); } 
+  50% { transform: translateY(-6px); } 
+}
+
+@media (prefers-reduced-motion: reduce) { 
+  .orb { 
+    animation: none; 
+  } 
+}
+.footer {
+  padding-top: 0;
+}

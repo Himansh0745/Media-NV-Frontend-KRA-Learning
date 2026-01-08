@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>10 - Advanced CSS: Variables, @supports, Container Queries, Counters</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <input class="sr-only" type="checkbox" id="theme" />
+
+    <div class="app">
+      <header class="page header">
+        <div class="header__row">
+          <h1>10 — Advanced CSS</h1>
+          <label class="toggle" for="theme">
+            <span class="toggle__label">Toggle theme</span>
+          </label>
+        </div>
+        <p class="lead">
+          Variables, feature queries, container queries, counters, and more.
+        </p>
+      </header>
+
+      <main class="page stack">
+        <section class="panel">
+          <h2>Variables + math functions</h2>
+          <div class="meter" aria-label="Meter demo">
+            <div class="meter__fill" style="--value: 72%"></div>
+          </div>
+          <p class="muted">
+            The meter uses a custom property <code>--value</code> to size the fill.
+          </p>
+        </section>
+
+        <section class="panel">
+          <h2>Selector helpers: :is() and :where()</h2>
+          <div class="callouts">
+            <div class="callout">
+              <h3>Callout A</h3>
+              <p class="muted">The title and text are styled using :where().</p>
+            </div>
+            <div class="callout callout--brand">
+              <h3>Callout B</h3>
+              <p class="muted">This callout overrides variables locally.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <h2>@supports: progressive enhancement</h2>
+          <div class="glass">
+            <p><strong>Glass panel</strong></p>
+            <p class="muted">
+              If <code>backdrop-filter</code> is supported, this becomes a frosted glass effect.
+            </p>
+          </div>
+        </section>
+
+        <section class="panel">
+          <h2>Container queries (responsive components)</h2>
+          <div class="container">
+            <article class="cq-card">
+              <h3>Component card</h3>
+              <p class="muted">
+                On wider containers, this becomes a 2-column layout.
+              </p>
+              <div class="cq-card__grid">
+                <div class="chip">A</div>
+                <div class="chip">B</div>
+                <div class="chip">C</div>
+                <div class="chip">D</div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="panel">
+          <h2>Counters + multi-column</h2>
+          <ol class="steps">
+            <li>Define a counter</li>
+            <li>Increment it per list item</li>
+            <li>Render it with ::before</li>
+            <li>Optionally flow into columns</li>
+            <li>Keep reading order accessible</li>
+            <li>Test on small screens</li>
+          </ol>
+        </section>
+      </main>
+
+      <footer class="page footer">
+        <p class="small">Next: final capstone layout (folder 11).</p>
+      </footer>
+    </div>
+  </body>
+</html>

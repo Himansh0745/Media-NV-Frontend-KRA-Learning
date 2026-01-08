@@ -1,0 +1,94 @@
+<!doctype html>
+<!-- The DOCTYPE tells the browser to use HTML5 standards mode. -->
+<html lang="en">
+<!-- <html> is the root element of the page. lang helps accessibility and SEO. -->
+
+<head>
+  <!-- <head> contains metadata (information about the document), not visible page content. -->
+
+  <meta charset="utf-8">
+  <!-- <meta charset> sets the character encoding so text renders correctly. -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <meta name="viewport"> helps pages render well on mobile screens. -->
+
+  <title>01 - Basic HTML5 Structure</title>
+
+  <base href="./">
+  <!-- <base> sets a base URL for relative links (use carefully in real projects). -->
+
+  <link rel="icon" href="favicon.ico">
+  <!-- <link> connects external resources (here: a favicon). This file may or may not exist. -->
+</head>
+
+<body>
+  <header>
+    <h1>HTML from 0 to Hero</h1>
+    <p>
+      This file teaches the basic HTML5 structure and a few foundational tags.</p>
+  </header>
+  <main>
+    <!-- <main> contains the unique main content of the page (only one per page). -->
+
+    <section>
+      <!-- <section> groups related content under a heading. -->
+      <h2>Common Block-Level Elements</h2>
+
+      <div>
+        <!-- <div> is a generic block container (use semantic elements when possible). -->
+        <p>Below is a horizontal rule:</p>
+        <hr>
+        <!-- <hr> is a thematic break (a divider between topics). -->
+
+        <p>Below is a line break inside a paragraph:</p>
+        <p>
+          First line<br>
+          Second line
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Inline Text Basics</h2>
+
+      <p>
+        <span>Span is an inline container</span>
+        <!-- <span> is a generic inline container (often used for styling, but we are not using CSS here). -->
+        and this is <strong>strong importance</strong>
+        <!-- <strong> marks text of strong importance (usually bold). -->
+        and this is <em>emphasis</em>.
+        <!-- <em> marks emphasized text (usually italic). -->
+      </p>
+
+      <p>
+        Use <code>&lt;code&gt;</code> for code,
+        <!-- <code> is used for inline code snippets. -->
+        <kbd>Ctrl</kbd>+<kbd>S</kbd> for keyboard input,
+        <!-- <kbd> indicates user input from a keyboard. -->
+        and <mark>mark</mark> to highlight.
+        <!-- <mark> highlights text for reference. -->
+      </p>
+    </section>
+
+    <section>
+      <h2>Real-World Mini Example: Simple App Header</h2>
+      <p>
+        Imagine this as the top of a hospital portal page.
+      </p>
+
+      <nav>
+        <a href="02-text-content.html">Next: Text Content</a>
+      </nav>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      <small>Last updated: <time datetime="2026-01-07">Jan 7, 2026</time></small>
+      <!-- <small> represents side comments or small print. -->
+      <!-- <time> represents a date/time; datetime holds machine-readable value. -->
+    </p>
+  </footer>
+</body>
+
+</html>

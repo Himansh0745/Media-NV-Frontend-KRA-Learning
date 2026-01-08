@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>08 - Forms & Accessibility: Inputs, Focus, Validation, UI</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header class="page">
+      <h1>08 — Forms &amp; Accessibility</h1>
+      <p class="lead">
+        Make forms readable, usable, and keyboard-friendly.
+      </p>
+    </header>
+
+    <main class="page stack">
+      <section class="panel">
+        <h2>Signup form</h2>
+        <form class="form" action="#" method="get">
+          <div class="field">
+            <label for="name">Full name</label>
+            <input id="name" name="name" type="text" placeholder="Ada Lovelace" required />
+            <p class="help" id="name-help">Required. Use your real name.</p>
+          </div>
+
+          <div class="field">
+            <label for="email">Email</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="ada@example.com"
+              required
+              aria-describedby="email-help"
+            />
+            <p class="help" id="email-help">
+              Must be a valid email (HTML built-in validation).
+            </p>
+          </div>
+
+          <div class="field">
+            <label for="role">Role</label>
+            <select id="role" name="role" required>
+              <option value="" selected disabled>Choose…</option>
+              <option value="frontend">Frontend</option>
+              <option value="backend">Backend</option>
+              <option value="design">Design</option>
+            </select>
+            <p class="help">Select boxes can be styled, but keep them usable.</p>
+          </div>
+
+          <fieldset class="fieldset">
+            <legend>Preferences</legend>
+            <label class="check">
+              <input type="checkbox" name="news" />
+              <span>Send me product updates</span>
+            </label>
+
+            <div class="radio-row" role="group" aria-label="Billing">
+              <label class="check">
+                <input type="radio" name="billing" value="monthly" checked />
+                <span>Monthly</span>
+              </label>
+              <label class="check">
+                <input type="radio" name="billing" value="yearly" />
+                <span>Yearly</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <div class="actions">
+            <button class="btn btn--primary" type="submit">Create account</button>
+            <button class="btn" type="button" disabled>Disabled action</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="panel">
+        <h2>Notes</h2>
+        <ul class="notes">
+          <li>
+            <strong>Use :focus-visible</strong> (not :focus) so mouse users don’t see
+            focus rings unnecessarily.
+          </li>
+          <li>
+            <strong>Don’t remove outlines</strong> unless you provide a better
+            replacement.
+          </li>
+          <li>
+            <strong>Validation</strong>: Avoid aggressive error colors before the user
+            interacts. This demo uses :user-invalid when supported.
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="page footer">
+      <p class="small">Next: images + media (folder 09).</p>
+    </footer>
+  </body>
+</html>
