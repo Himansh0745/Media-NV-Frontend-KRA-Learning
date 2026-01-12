@@ -1,0 +1,107 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --glass: rgba(255,255,255,0.08);
+  --border: rgba(255,255,255,0.15);
+  --text: #fff;
+  --muted: rgba(255,255,255,0.6);
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  font-family: Inter, system-ui, sans-serif;
+  background: linear-gradient(135deg,#0f0f23,#1a1a2e,#16213e);
+}
+
+/* Main card */
+.glass-container {
+  width: 360px;
+  padding: 24px;
+  border-radius: 24px;
+  background: var(--glass);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 20px 40px rgba(0,0,0,.4);
+  color: var(--text);
+}
+
+/* Header */
+.app-header { text-align: center; margin-bottom: 24px; }
+.app-title { font-size: 2rem; font-weight: 700; }
+.app-subtitle { color: var(--muted); }
+
+/* Input */
+.input-section {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.glass-input, .glass-button {
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--glass);
+  color: var(--text);
+  padding: 12px 16px;
+}
+
+.glass-input { flex: 1; }
+.glass-button {
+  cursor: pointer;
+  background: linear-gradient(135deg,#1a1a2e,#16213e);
+}
+
+/* Stats */
+.stats-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.stat-card {
+  flex: 1;
+  text-align: center;
+  padding: 12px;
+  border-radius: 14px;
+  background: var(--glass);
+  border: 1px solid var(--border);
+}
+
+/* Todos */
+.todo-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: 14px;
+  background: var(--glass);
+  border: 1px solid var(--border);
+}
+
+.todo-item.completed { opacity: .5; text-decoration: line-through; }
+
+.todo-text { flex: 1; }
+
+.delete-button {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: none;
+  color: #fff;
+  background: #ef4444;
+  cursor: pointer;
+}
+
+.empty-state {
+  text-align: center;
+  color: var(--muted);
+  padding: 20px;
+}
